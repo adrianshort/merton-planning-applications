@@ -1,2 +1,9 @@
-# Ignore output of scraper
-data.sqlite
+*.sqlite
+*.db
+.ruby-*
+.DS_Store
+*.csv
+*.xls*
+*.json
+.env
+*.txt
