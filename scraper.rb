@@ -33,13 +33,33 @@ logger.info "Log level is: #{logger.level}"
 URL = SITE_URL + '/Northgate/PlanningExplorerAA/GeneralSearch.aspx'
 
 form_vars = {
-  # 'cboStatusCode' => '4', # REGISTERED
   'cboSelectDateValue' => 'DATE_RECEIVED',
-  # 'cboMonths' => '12', # 1..12
-  'cboDays' => 1,
-  'rbGroup' => 'rbDay',
   'csbtnSearch' => 'Search' # required
 }
+
+# If both MORPH_DAYS and MORPH_MONTHS are set, MORPH_DAYS should be used.
+
+unless ENV['MORPH_DAYS'] || ENV['MORPH_MONTHS']
+  logger.fatal "Neither MORPH_MONTHS nor MORPH_DAYS set. Nothing to scrape. Exiting."
+  exit 1
+end
+
+if ENV['MORPH_MONTHS']
+  form_vars.merge!({
+    'cboMonths' => ENV['MORPH_MONTHS'],
+    'rbGroup' => 'rbMonth'
+  })
+end
+
+if ENV['MORPH_DAYS']
+  form_vars.merge!({
+    'cboMonths' => nil,
+    'cboDays' => ENV['MORPH_DAYS'],
+    'rbGroup' => 'rbDay'
+  })
+end
+
+form_vars.merge!({ 'cboStatusCode' => ENV['MORPH_STATUS']}) if ENV['MORPH_STATUS']
 
 logger.info "Form variables: #{form_vars.to_s}"
 
