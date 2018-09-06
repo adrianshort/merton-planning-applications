@@ -25,9 +25,9 @@ According to the principle of _one codebase, many deploys_, this scraper is [con
 
 |Name|Purpose|Default|Required?|
 |------------------|-----------------------------------------|----------|
-|SCRAPER_DELAY     |Minimum delay in seconds between HTTP requests to the server.|10|No|
-|SCRAPER_USER_AGENT|User agent string sent as an HTTP request header.|_None_|Yes|
-|SCRAPER_LOG_LEVEL |Controls the level of detail in the output logs according to [Ruby's `Logger` class](https://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger.html) constants.|1 _(Logger::INFO)_|No|
+|MORPH_DELAY     |Minimum delay in seconds between HTTP requests to the server.|10|No|
+|MORPH_USER_AGENT|User agent string sent as an HTTP request header.|_None_|Yes|
+|MORPH_LOG_LEVEL |Controls the level of detail in the output logs according to [Ruby's `Logger` class](https://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger.html) constants.|1 _(Logger::INFO)_|No|
 
 ## Running
 

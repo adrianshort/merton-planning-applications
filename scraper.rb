@@ -17,13 +17,13 @@ def crawl_delay
   sleep DELAY_S
 end
 
-DELAY_S = ENV['SCRAPER_DELAY'].to_f || 10 # seconds. Conservatively slow by default. Scrapes approx 360 pages per hour.
-USER_AGENT = ENV['SCRAPER_USER_AGENT']
+DELAY_S = ENV['MORPH_DELAY'].to_f || 10 # seconds. Conservatively slow by default. Scrapes approx 360 pages per hour.
+USER_AGENT = ENV['MORPH_USER_AGENT']
 DATE_REGEX = /\d{2}-\d{2}-\d{4}/
 
 $stdout.sync = true # Flush output buffer after every write so log messages appear immediately.
 logger = Logger.new($stdout)
-logger.level = ENV['SCRAPER_LOG_LEVEL'].to_i || Logger::INFO
+logger.level = ENV['MORPH_LOG_LEVEL'].to_i || Logger::INFO
 logger.info "Scraper starts. Let's do this."
 logger.info "Delay between requests is #{DELAY_S} seconds."
 logger.info "User agent is: #{USER_AGENT}"
