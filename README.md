@@ -18,16 +18,15 @@ The schema is based on the core elements from [planningalerts.org.au](https://ww
     $ cd merton-planning-applications
     $ bundle
 
-### Configuration
+## Configuration
 
 According to the principle of _one codebase, many deploys_, this scraper is [configured using environment variables](https://12factor.net/config) rather than by editing constants in the code.
 
-
-|Name|Purpose|Default|Required?|
-|------------------|-----------------------------------------|----------|
-|MORPH_DELAY     |Minimum delay in seconds between HTTP requests to the server.|10|No|
-|MORPH_USER_AGENT|User agent string sent as an HTTP request header.|_None_|Yes|
-|MORPH_LOG_LEVEL |Controls the level of detail in the output logs according to [Ruby's `Logger` class](https://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger.html) constants.|1 _(Logger::INFO)_|No|
+| Name | Purpose | Default | Required? |
+| --- |--- | --- |
+| MORPH_DELAY      | Minimum delay in seconds between HTTP requests to the server. | 10 | No |
+| MORPH_USER_AGENT | User agent string sent as an HTTP request header. | _None_ | Yes |
+| MORPH_LOG_LEVEL  | Controls the level of detail in the output logs according to [Ruby's `Logger` class](https://ruby-doc.org/stdlib-2.1.0/libdoc/logger/rdoc/Logger.html) constants. | 1 _(Logger::INFO)_ | No |
 
 ## Running
 
