@@ -10,7 +10,7 @@ require 'securerandom'
 
 # Northgate Planning Explorer
 
-SITE_URL = 'http://planning.merton.gov.uk'
+SITE_URL = 'https://planning.merton.gov.uk'
 BASE_URL = SITE_URL + '/Northgate/PlanningExplorerAA/Generic/'
 
 def crawl_delay
